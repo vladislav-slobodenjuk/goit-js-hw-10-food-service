@@ -1,47 +1,28 @@
 import { toggle, body } from './refs';
 
-const Theme = {
-  LIGHT: 'light-theme',
-  DARK: 'dark-theme',
-};
+import { Theme } from './themes';
+const { LIGHT: ligth, DARK: dark } = Theme;
 
 let storageTheme = localStorage.getItem('theme');
 
 if (storageTheme === null) {
-  console.log('scenario null');
-  body.classList.add(Theme.LIGHT);
-  localStorage.setItem('theme', Theme.LIGHT);
-} else if (storageTheme === Theme.DARK) {
-  console.log('scenario Theme.DARK');
-  body.classList.add(Theme.DARK);
+  // console.log('scenario null');
+  body.classList.add(ligth);
+  localStorage.setItem('theme', ligth);
+} else if (storageTheme === dark) {
+  // console.log('scenario dark');
+  body.classList.add(dark);
   toggle.checked = true;
 }
 
 toggle.addEventListener('change', () => {
-  body.classList.toggle(Theme.DARK);
-  body.classList.toggle(Theme.LIGHT);
+  body.classList.toggle(dark);
+  body.classList.toggle(ligth);
 
-  // localStorage.getItem('theme') === Theme.LIGHT
-  //   ? localStorage.setItem('theme', Theme.DARK)
-  //   : localStorage.setItem('theme', Theme.LIGHT);
+  localStorage.getItem('theme') === ligth
+    ? localStorage.setItem('theme', dark)
+    : localStorage.setItem('theme', ligth);
 
-  localStorage.setItem('theme', body.classList);
-  console.log(`set localstorage ${body.classList}`);
+  // localStorage.setItem('theme', body.classList);
+  // console.log(`set localstorage ${body.classList}`);
 });
-
-// let storageTheme = localStorage.getItem('theme');
-// // console.log('storageTheme :>> ', storageTheme);
-
-// // console.log(localStorage.getItem('theme'));
-// if (storageTheme) {
-//   body.classList.add(storageTheme);
-//   // console.log('storageTheme :>> ', storageTheme);
-// }
-
-// // console.dir(toggle.checked);
-// if (!toggle.checked) {
-//   localStorage.setItem('theme', Theme.LIGHT);
-//   body.classList.add(Theme.LIGHT);
-// }
-
-// toggle.addEventListener('change', e => {});
