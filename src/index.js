@@ -1,2 +1,2 @@
 import './js/createMarkup';
-import './js/changeThem';
+import './js/changeTheme';
