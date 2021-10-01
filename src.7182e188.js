@@ -13,8 +13,8 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"./refs":"VyiV","../menu.json":"mA8c","../templates/list-item-markup.handlebars":"iBsq"}],"XcIw":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.Theme=void 0;const e={LIGHT:"light-theme",DARK:"dark-theme"};exports.Theme=e;
 },{}],"JW5E":[function(require,module,exports) {
-"use strict";var e=require("./refs"),t=require("./themes");const{LIGHT:s,DARK:o}=t.Theme;let l=localStorage.getItem("theme");l||(l=s,localStorage.setItem("theme",s)),e.body.classList.add(l),e.toggle.checked=l===o,e.toggle.addEventListener("change",()=>{e.body.classList.toggle(o),e.body.classList.toggle(s);const t=localStorage.getItem("theme")===s?o:s;localStorage.setItem("theme",t)});
+"use strict";var e=require("./refs"),t=require("./themes");const{LIGHT:s,DARK:c}=t.Theme;let g=localStorage.getItem("theme")||s;e.body.classList.add(g),e.toggle.checked=g===c,e.toggle.addEventListener("change",t=>{e.body.classList.toggle(c),e.body.classList.toggle(s);const g=t.target.checked?c:s;localStorage.setItem("theme",g)});
 },{"./refs":"VyiV","./themes":"XcIw"}],"Focm":[function(require,module,exports) {
 "use strict";require("./js/createMarkup"),require("./js/changeTheme");
 },{"./js/createMarkup":"kQMz","./js/changeTheme":"JW5E"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-10-food-service/src.3faad2dd.js.map
+//# sourceMappingURL=/goit-js-hw-10-food-service/src.7182e188.js.map
